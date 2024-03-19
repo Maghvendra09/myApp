@@ -20,7 +20,7 @@ const Reservation = () => {
     // console.log(`${process.env.REACT_APP_BACKEND_URL}/api/v1/reservation/send`);
     try {
       const { data } = await axios.post(
-        `http://my-app-backend-eight.vercel.app/api/v1/reservation/send`,
+        `https://my-app-backend-eight.vercel.app/api/v1/reservation/send`,
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
