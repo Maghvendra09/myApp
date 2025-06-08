@@ -9,9 +9,10 @@ const app = express();
 dotenv.config({ path: "./config.env" });
 console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 console.log("PORT:", process.env.PORT);
-dbConnection().catch((error) => {
-  console.error("Database connection failed:", error);
-});
+dbConnection()
+  .then(() => console.log("Database connected successfully"))
+  .catch((error) => console.error("Database connection failed:", error));
+
 
 
 app.use(
