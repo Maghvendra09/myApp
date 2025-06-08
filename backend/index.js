@@ -7,11 +7,13 @@ import { dbConnection } from "./database/dbConnection.js";
 
 const app = express();
 dotenv.config({ path: "./config.env" });
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
+console.log("PORT:", process.env.PORT);
 
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, "http://localhost:5173", "https://finedinee.vercel.app"],
+    origin: "*",
     methods: ["POST"],
     credentials: true,
   })
